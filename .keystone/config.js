@@ -118,6 +118,9 @@ var lists = {
           inlineConnect: true,
           inlineCreate: { fields: ["name"] }
         }
+      }),
+      createdAt: (0, import_fields.timestamp)({
+        defaultValue: { kind: "now" }
       })
     }
   }),

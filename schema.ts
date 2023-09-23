@@ -129,6 +129,10 @@ export const lists: Lists = {
           inlineCreate: { fields: ['name'] },
         },
       }),
+
+      createdAt: timestamp({
+        defaultValue: { kind: 'now' },
+      }),
     },
   }),
 

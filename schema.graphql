@@ -141,6 +141,7 @@ type Post {
   author: User
   tags(where: TagWhereInput! = {}, orderBy: [TagOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: TagWhereUniqueInput): [Tag!]
   tagsCount(where: TagWhereInput! = {}): Int
+  createdAt: DateTime
 }
 
 type Post_content_Document {
@@ -159,6 +160,7 @@ input PostWhereInput {
   title: StringFilter
   author: UserWhereInput
   tags: TagManyRelationFilter
+  createdAt: DateTimeNullableFilter
 }
 
 input TagManyRelationFilter {
@@ -170,6 +172,7 @@ input TagManyRelationFilter {
 input PostOrderByInput {
   id: OrderDirection
   title: OrderDirection
+  createdAt: OrderDirection
 }
 
 input PostUpdateInput {
@@ -177,6 +180,7 @@ input PostUpdateInput {
   content: JSON
   author: UserRelateToOneForUpdateInput
   tags: TagRelateToManyForUpdateInput
+  createdAt: DateTime
 }
 
 input UserRelateToOneForUpdateInput {
@@ -202,6 +206,7 @@ input PostCreateInput {
   content: JSON
   author: UserRelateToOneForCreateInput
   tags: TagRelateToManyForCreateInput
+  createdAt: DateTime
 }
 
 input UserRelateToOneForCreateInput {
