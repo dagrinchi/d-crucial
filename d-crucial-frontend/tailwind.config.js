@@ -18,6 +18,7 @@ module.exports = {
         'h5': [.83 / FACTOR + 'em', 1.5],
         'h6': [.67 / FACTOR + 'em', 1.5],
         'paragraph': [1 / FACTOR + 'em', 1.5],
+        'button': [1 / FACTOR + 'em', 1.5],
       },
     },
   },

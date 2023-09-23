@@ -9,10 +9,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 237, 237, 237
+  --background-rgb: 237, 237, 237;
+  /* --color-primary: #2563eb; */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
