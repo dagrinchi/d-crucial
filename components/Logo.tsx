@@ -1,7 +1,14 @@
-import React from "react"
+/** @jsxRuntime classic */
+/** @jsx jsx */
+
+import { jsx } from '@keystone-ui/core';
 
 const Logo = () => {
-    return (<h2>The Daily Crucial</h2>)
+    return (<img
+        src="/images/d-crucial-logo.png"
+        alt="The Daily Crucial"
+        css={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+    />)
 }
 
 export default Logo
