@@ -16,7 +16,7 @@ export default async function Home() {
   const data = pageData[0]
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12">
+    <main className="flex min-h-screen flex-col items-center justify-between pl-10 pr-10 pt-4 pb-4">
       <div className="mb-4">
         <MainLogo />
       </div>

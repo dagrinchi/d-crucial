@@ -4,8 +4,8 @@ const MainLogo = () => {
     return <Image
         src="/d-crucial-logo.png"
         alt="The Daily Crucial"
-        width={253}
-        height={63}
+        width={253 * 2}
+        height={63 * 2}
         priority
     />
 }
