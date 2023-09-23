@@ -10,6 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': '#2563eb',
+        'gris': 'rgba(60,60,60,0)',
+        'transparent': 'rgba(0,0,0,0)',
+      },
       fontSize: {
         'h1': [2 / FACTOR + 'em', 1.5],
         'h2': [1.5 / FACTOR + 'em', 1.5],
