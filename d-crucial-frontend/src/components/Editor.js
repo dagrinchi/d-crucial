@@ -28,7 +28,7 @@ const Editor = ({ value }) => {
       case 'paragraph':
         return <p {...attributes} className="text-paragraph text-justify mb-4">{children}</p>
       case 'relationship':
-        return <Image className="rounded-lg shadow-lg overflow-hidden" src={element.data.data.file.url} alt={element.data.data.file} width={367} height={275} />
+        return <Image className="rounded-lg shadow-md overflow-hidden" src={element.data.data.file.url} alt={element.data.data.file} width={367} height={275} />
       default:        
         return <></>
     }
