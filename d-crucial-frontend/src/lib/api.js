@@ -40,3 +40,16 @@ export async function getTheLastPostByDate(date) {
   `)
   return data?.posts
 }
+
+
+export async function updatePostWithChainMessage(postId, message) {
+  const { data } = await fetchAPI(`
+    mutation updatePostWithChainMessage($postId: ID!, $message: String!) {
+      updatePost(where: { id: $postId }, data: { chainMessage: $message }) {
+        id
+      }
+    }
+  `, { postId, message })
+  console.log(data)
+  return {}
+}

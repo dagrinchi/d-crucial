@@ -121,7 +121,8 @@ var lists = {
       }),
       createdAt: (0, import_fields.timestamp)({
         defaultValue: { kind: "now" }
-      })
+      }),
+      chainMessage: (0, import_fields.text)({ ui: { displayMode: "textarea" } })
     }
   }),
   Image: (0, import_core.list)({

@@ -133,6 +133,8 @@ export const lists: Lists = {
       createdAt: timestamp({
         defaultValue: { kind: 'now' },
       }),
+
+      chainMessage: text({ ui: { displayMode: 'textarea' }}),
     },
   }),
 
