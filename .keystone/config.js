@@ -202,7 +202,7 @@ var keystone_default = withAuth(
       local_images: {
         kind: "local",
         type: "image",
-        generateUrl: (path) => `http://localhost:3000/images${path}`,
+        generateUrl: (path) => `http://localhost:8000/images${path}`,
         serverRoute: {
           path: "/images"
         },
