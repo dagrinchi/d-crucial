@@ -8,22 +8,21 @@ import MainLogo from '@/components/MainLogo'
 import Button from '@/components/Button'
 
 const Main = ({ data }) => {
-  
+
   const ref = React.useRef()
   const [loading, setLoading] = React.useState(false)
-  
+
   const generateScreenCapture = () => {
     if (!ref.current) return
+    let { width, height } = ref.current.getBoundingClientRect()
 
     setLoading(true)
     html2canvas(ref.current).then(canvas => {
       let croppedCanvas = document.createElement("canvas")
       let croppedCanvasContext = croppedCanvas.getContext("2d")
 
-      let { width, height } = ref.current.getBoundingClientRect()
-
-      croppedCanvas.width = width
-      croppedCanvas.height = height
+      croppedCanvas.width = width * 2
+      croppedCanvas.height = height * 2
 
       croppedCanvasContext.drawImage(canvas, 0, 0)
 
