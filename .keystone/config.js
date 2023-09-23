@@ -184,6 +184,10 @@ var session = (0, import_session.statelessSessions)({
 // keystone.ts
 var keystone_default = withAuth(
   (0, import_core2.config)({
+    server: {
+      cors: { origin: ["http://localhost:3000"], credentials: true },
+      port: 8e3
+    },
     db: {
       // we're using sqlite for the fastest startup experience
       //   for more information on what database might be appropriate for you
