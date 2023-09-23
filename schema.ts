@@ -15,7 +15,7 @@ import {
   relationship,
   password,
   timestamp,
-  select,
+  image,
 } from '@keystone-6/core/fields';
 
 // the document field is a more complicated field, so it has it's own package
@@ -82,14 +82,20 @@ export const lists: Lists = {
           [1, 2],
           [1, 2, 1],
         ],
-        links: true,
         dividers: true,
+        relationships: {
+          mention: {
+            listKey: 'Image',
+            label: 'Image',
+            selection: 'id file { url }',
+          },
+        },
       }),
 
       // with this field, you can set a User as the author for a Post
       author: relationship({
         // we could have used 'User', but then the relationship would only be 1-way
-        ref: 'User.posts',
+        ref: 'User.posts', 
 
         // this is some customisations for changing how this will look in the AdminUI
         ui: {
@@ -124,6 +130,14 @@ export const lists: Lists = {
         },
       }),
     },
+  }),
+
+  Image: list({
+    access: allowAll,
+    fields: {
+      name: text(),
+      file: image({ storage: 'local_images' }),
+    }
   }),
 
   // this last list is our Tag list, it only has a name field for now

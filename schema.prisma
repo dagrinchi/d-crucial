@@ -31,6 +31,16 @@ model Post {
   @@index([authorId])
 }
 
+model Image {
+  id             String  @id @default(cuid())
+  name           String  @default("")
+  file_filesize  Int?
+  file_extension String?
+  file_width     Int?
+  file_height    Int?
+  file_id        String?
+}
+
 model Tag {
   id    String @id @default(cuid())
   name  String @default("")

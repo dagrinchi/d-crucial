@@ -23,6 +23,17 @@ export default withAuth(
       provider: 'sqlite',
       url: 'file:./keystone.db',
     },
+    storage: {
+      local_images: {
+        kind: 'local',
+        type: 'image',
+        generateUrl: path => `http://localhost:3000/images${path}`,
+        serverRoute: {
+          path: '/images',
+        },
+        storagePath: 'public/images',
+      },
+    },
     lists,
     session,
   })

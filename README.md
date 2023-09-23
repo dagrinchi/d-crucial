@@ -1,1 +1,1 @@
-# Daily The Crucial - Ethglobal New York 2023
+# The Daily Crucial - Ethglobal New York 2023

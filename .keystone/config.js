@@ -78,8 +78,14 @@ var lists = {
           [1, 2],
           [1, 2, 1]
         ],
-        links: true,
-        dividers: true
+        dividers: true,
+        relationships: {
+          mention: {
+            listKey: "Image",
+            label: "Image",
+            selection: "id file { url }"
+          }
+        }
       }),
       // with this field, you can set a User as the author for a Post
       author: (0, import_fields.relationship)({
@@ -113,6 +119,13 @@ var lists = {
           inlineCreate: { fields: ["name"] }
         }
       })
+    }
+  }),
+  Image: (0, import_core.list)({
+    access: import_access.allowAll,
+    fields: {
+      name: (0, import_fields.text)(),
+      file: (0, import_fields.image)({ storage: "local_images" })
     }
   }),
   // this last list is our Tag list, it only has a name field for now
@@ -177,6 +190,17 @@ var keystone_default = withAuth(
       //   see https://keystonejs.com/docs/guides/choosing-a-database#title
       provider: "sqlite",
       url: "file:./keystone.db"
+    },
+    storage: {
+      local_images: {
+        kind: "local",
+        type: "image",
+        generateUrl: (path) => `http://localhost:3000/images${path}`,
+        serverRoute: {
+          path: "/images"
+        },
+        storagePath: "public/images"
+      }
     },
     lists,
     session
