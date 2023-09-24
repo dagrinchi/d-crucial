@@ -59,7 +59,7 @@ const Main = ({ data }) => {
         }} disabled={loading} className="mx-4" />
         <Button text="2. Connect metamask wallet" onClick={() => {
 
-        }} disabled className="ml-4" />
+        }} disabled className="mr-4" />
         <Button text="3. Generate NFT" onClick={() => {
 
         }} disabled className="mr-4" />
