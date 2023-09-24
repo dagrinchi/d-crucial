@@ -37,12 +37,13 @@ const Main = ({ data }) => {
       <section ref={ref} className="flex max-w-[1263px] mx-auto min-h-screen flex-col items-center justify-between px-10 py-4">
         <div className="mb-4">
           <MainLogo />
-          <p className="text-center text-h4 mt-4">{new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</p>          
+          <p className="text-center text-h4 mt-4">{new Date(data.createdAt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}</p>
         </div>
         <Editor value={data.content.document} />
-        <div className="flex w-full flex-col justify-end items-end">          
+        <div className="flex w-full flex-col justify-end items-end">
           <p className="italic text-h4 font-italic">{data.author.name}</p>
           <p className="italic text-h5 font-italic">{tags}</p>
+          <p className="text-center text-h4 mt-4">{new Date(data.createdAt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}</p>
         </div>
       </section>
       <div className="flex flex-row justify-end items-center fixed bottom-0 left-0 right-0 bg-white shadow-lg w-full h-[80px] z-1" style={{
