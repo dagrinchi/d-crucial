@@ -4,6 +4,7 @@
 //
 // Keystone imports the default export of this file, expecting a Keystone configuration object
 //   you can find out more at https://keystonejs.com/docs/apis/config
+import bodyParser from 'body-parser'
 
 import { config } from '@keystone-6/core';
 
@@ -19,6 +20,9 @@ export default withAuth(
     server: {
       cors: { origin: ['http://localhost:3000'], credentials: true },
       port: 8000,
+      extendExpressApp: (app) => {
+        app.use(bodyParser.json({ limit: '100mb' }))
+      },
     },
     db: {
       // we're using sqlite for the fastest startup experience
