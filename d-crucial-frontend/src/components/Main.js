@@ -31,13 +31,19 @@ const Main = ({ data }) => {
         })
     })
   }
+  const tags = data.tags.map(t => t.name).join(', ')
   return (
-    <main>
+    <main className="pb-[80px]">
       <section ref={ref} className="flex max-w-[1263px] mx-auto min-h-screen flex-col items-center justify-between px-10 py-4">
         <div className="mb-4">
           <MainLogo />
+          <p className="text-center text-h4 mt-4">{new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</p>          
         </div>
         <Editor value={data.content.document} />
+        <div className="flex w-full flex-col justify-end items-end">          
+          <p className="italic text-h4 font-italic">{data.author.name}</p>
+          <p className="italic text-h5 font-italic">{tags}</p>
+        </div>
       </section>
       <div className="flex flex-row justify-end items-center fixed bottom-0 left-0 right-0 bg-white shadow-lg w-full h-[80px] z-1" style={{
         'background': 'rgba(255, 255, 255, 0.8)',
@@ -45,7 +51,8 @@ const Main = ({ data }) => {
         'backdropFilter': 'blur(5px)',
         'border': '1px solid rgba(255, 255, 255, 0.3)',
       }}>
-        <p>Hello <strong>John Doe</strong>, The Journalist</p>
+        <h3 className="text-h3 font-bold mr-auto pl-4">Preview</h3>
+        <p>Hello <strong>{data.author.name}</strong></p>
         <Button text="Generate NFT" onClick={() => {
           generateScreenCapture()
         }} disabled={loading} />
