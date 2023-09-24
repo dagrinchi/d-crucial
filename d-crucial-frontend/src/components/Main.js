@@ -20,7 +20,7 @@ const Main = ({ data }) => {
       const message = canvas.toDataURL('image/png')
       fetch("/api/update_post", {
         method: "POST",
-        body: JSON.stringify({ message })
+        body: JSON.stringify({ postId: data.id, message })
       })
         .then(() => {
           setLoading(false)

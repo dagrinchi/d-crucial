@@ -22,6 +22,7 @@ export async function getTheLastPostByDate() {
   const { data } = await fetchAPI(`
     query TheLastPostByDate {
       posts(orderBy: [{ createdAt: desc }], take: 1) {
+        id
         author {
           name
           email
@@ -50,6 +51,5 @@ export async function updatePostWithChainMessage(postId, message) {
       }
     }
   `, { postId, message })
-  console.log(data)
-  return {}
+  return data?.updatePost
 }
