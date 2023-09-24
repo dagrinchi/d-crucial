@@ -18,10 +18,10 @@ async function fetchAPI(query, variables = {}) {
   return { data: undefined }
 }
 
-export async function getTheLastPostByDate(date) {
+export async function getTheLastPostByDate() {
   const { data } = await fetchAPI(`
     query TheLastPostByDate {
-      posts(orderBy: [{ createdAt: desc }], take: 1, where: { createdAt: { gte: "${date}" }}) {
+      posts(orderBy: [{ createdAt: desc }], take: 1) {
         author {
           name
           email
