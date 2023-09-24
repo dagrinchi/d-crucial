@@ -14,29 +14,26 @@ const Main = ({ data }) => {
 
   const generateScreenCapture = () => {
     if (!ref.current) return
-    let { width, height } = ref.current.getBoundingClientRect()
 
     setLoading(true)
     html2canvas(ref.current).then(canvas => {
-      let croppedCanvas = document.createElement("canvas")
-      let croppedCanvasContext = croppedCanvas.getContext("2d")
-
-      croppedCanvas.width = width * 2
-      croppedCanvas.height = height * 2
-
-      croppedCanvasContext.drawImage(canvas, 0, 0)
-
-      const a = document.createElement("a")
-      a.href = croppedCanvas.toDataURL()
-      a.download = "receipt.png"
-      a.click()
-
-      setLoading(false)
+      const message = canvas.toDataURL('image/png')
+      fetch("/api/update_post", {
+        method: "POST",
+        body: JSON.stringify({ message })
+      })
+        .then(() => {
+          setLoading(false)
+        })
+        .catch(err => {
+          console.error(err)
+          setLoading(false)
+        })
     })
   }
   return (
     <main>
-      <section ref={ref} className="flex max-w-[1263px] mx-auto min-h-screen flex-col items-center justify-between pl-10 pr-10 pt-4 pb-4">
+      <section ref={ref} className="flex max-w-[1263px] mx-auto min-h-screen flex-col items-center justify-between px-10 py-4">
         <div className="mb-4">
           <MainLogo />
         </div>
