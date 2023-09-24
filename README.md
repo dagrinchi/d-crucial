@@ -41,6 +41,12 @@ In order to everything works, you have to run the backend with keystonejs and th
 
 ## Visit The Daily Crucial
 
-Open your browser [http://localhost:3000](http://localhost:3000)
+Please feel free to create a new User and then create a new Post at: [http://localhost:8000/]
+(http://localhost:8000/)
+
+The you can visit your daily preview at [http://localhost:3000](http://localhost:3000)
+
+Next you can generate your NFT
+
 
 ### By David Almeciga
