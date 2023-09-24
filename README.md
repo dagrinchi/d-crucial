@@ -1,5 +1,15 @@
 # Daily The Crucial - Ethglobal New York 2023
 
+## Challenge
+
+The NFT's on-chain has limits which exceed the costs of storing a large amount of data, especially media such as photos, audios, videos essential for a news business companies.
+
+## Proposal
+
+I want to create a platform that allows journalists, publishers and editors to create daily news in the style of old-fashioned newspapers, taking advantage of every space within an image with a capture size of 1200x1200 pixels on the NFT blockchain.
+
+Then, match the image with the off-chain resources stored like photos, videos and audios.
+
 ## Backend
 
 The backend was made with KeystoneJS CMS, please visit [https://keystonejs.com/](https://keystonejs.com/).
@@ -37,7 +47,18 @@ npm install
 npm run dev
 ```
 
-In order to everything works, you have to run the backend with keystonejs and the frontend with NextJS at the same time.
+## Rust Server
+
+I'm willing to connect the Arbitrum stylus [https://docs.arbitrum.io/stylus/stylus-gentle-introduction](https://docs.arbitrum.io/stylus/stylus-gentle-introduction) with a Rust Server like Actix [https://actix.rs/](https://actix.rs/) to dispose the NFT generation and deploy through async url methods
+
+Run Rust Server with:
+
+```
+cd d-crucial-stylus
+cargo run
+```
+
+In order to everything works, you have to run the backend with keystonejs, the frontend with NextJS and Rust Server at the same time.
 
 ## Visit Daily The Crucial
 
@@ -46,7 +67,16 @@ Please feel free to create a new User and then create a new Post at: [http://loc
 
 The you can visit your daily preview at [http://localhost:3000](http://localhost:3000)
 
-Next you can generate your NFT
+Next you can connect your wallet with metamask, then generate your NFT.
 
+## What's next?
+
+- Optimization of capture with Rust
+- Trace the image capture to svg
+- Store images, videos, and more resources with IPFS
+
+
+
+Thank you ETHGlobal New York!
 
 ### By David Almeciga
