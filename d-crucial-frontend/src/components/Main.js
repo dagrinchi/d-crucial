@@ -57,7 +57,13 @@ const Main = ({ data }) => {
         <Button text="1. Capture and update" onClick={() => {
           generateScreenCapture()
         }} disabled={loading} className="mx-4" />
-        <Button text="2. Create IPFS resources" onClick={() => {
+        <Button text="2. Connect metamask wallet" onClick={() => {
+
+        }} disabled className="ml-4" />
+        <Button text="3. Generate NFT" onClick={() => {
+
+        }} disabled className="mr-4" />
+        <Button text="4. Publish resources IPFS" onClick={() => {
 
         }} disabled className="mr-4" />
       </div>
