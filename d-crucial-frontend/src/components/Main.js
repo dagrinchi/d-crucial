@@ -34,8 +34,8 @@ const Main = ({ data }) => {
   const tags = data.tags.map(t => t.name).join(', ')
   return (
     <main className="pb-[80px]">
-      <section ref={ref} className="flex max-w-[1263px] mx-auto min-h-screen flex-col items-center justify-between px-10 py-4">
-        <div className="mb-4">
+      <section ref={ref} className="flex max-w-[1200px] mx-auto min-h-screen flex-col items-center justify-between px-10 py-4">
+        <div className="mb-6">
           <MainLogo />
           <p className="text-center text-h4 mt-4">{new Date(data.createdAt).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}</p>
         </div>
@@ -54,9 +54,12 @@ const Main = ({ data }) => {
       }}>
         <h3 className="text-h3 font-bold mr-auto pl-4">Preview</h3>
         <p>Hello <strong>{data.author.name}</strong></p>
-        <Button text="Generate NFT" onClick={() => {
+        <Button text="1. Capture and update" onClick={() => {
           generateScreenCapture()
-        }} disabled={loading} />
+        }} disabled={loading} className="mx-4" />
+        <Button text="2. Create IPFS resources" onClick={() => {
+
+        }} disabled className="mr-4" />
       </div>
     </main>
   )

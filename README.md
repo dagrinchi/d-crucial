@@ -1,4 +1,4 @@
-# The Daily Crucial - Ethglobal New York 2023
+# Daily The Crucial - Ethglobal New York 2023
 
 ## Backend
 
@@ -39,7 +39,7 @@ npm run dev
 
 In order to everything works, you have to run the backend with keystonejs and the frontend with NextJS at the same time.
 
-## Visit The Daily Crucial
+## Visit Daily The Crucial
 
 Please feel free to create a new User and then create a new Post at: [http://localhost:8000/]
 (http://localhost:8000/)

@@ -12,7 +12,7 @@ const Editor = ({ value }) => {
     switch (element.type) {
       case 'heading':
         return {
-          1: <h1 {...attributes} className="text-h1 font-medium text-center mb-4">{children}</h1>,
+          1: <h1 {...attributes} className="text-h1 font-medium text-center mb-4 uppercase">{children}</h1>,
           2: <h2 {...attributes} className="text-h2 font-bold text-center mb-2">{children}</h2>,
           3: <h3 {...attributes} className="text-h3 font-bold text-center mb-2">{children}</h3>,
           4: <h4 {...attributes} className="text-h4 font-bold text-center mb-2">{children}</h4>,

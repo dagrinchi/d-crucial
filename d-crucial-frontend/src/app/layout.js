@@ -4,8 +4,8 @@ import { Hepta_Slab } from 'next/font/google'
 const heptaSlab = Hepta_Slab({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'The Daily Crucial',
-  description: 'The Daily Crucial - Ethglobal - New York 2023',
+  title: 'Daily The Crucial',
+  description: 'Daily The Crucial - Ethglobal - New York 2023',
 }
 
 export default function RootLayout({ children }) {
